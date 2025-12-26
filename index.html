@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EV686 – Trạm Sạc • Rửa Xe • Coffee (Rạch Giá)</title>
+  <meta name="description" content="EV686 Rạch Giá: Trạm sạc ô tô điện – rửa xe – coffee phòng lạnh & khu võng. Mở cửa 06:00–23:00. Bấm để gọi, chỉ đường, vào nhóm Zalo." />
+  <style>
+    :root{
+      --bg:#071008; --card:rgba(255,255,255,.06); --bd:rgba(255,255,255,.12);
+      --text:#eaf5ee; --muted:#b9c7bb; --accent:#39d98a; --accent2:#ffd66b;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:radial-gradient(1200px 500px at 20% 0%, rgba(57,217,138,.18), transparent 60%),
+                 radial-gradient(900px 500px at 90% 10%, rgba(255,214,107,.12), transparent 55%),
+                 linear-gradient(180deg,#050b06, #071008 40%, #071008);
+      color:var(--text);
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(0,0,0,.20);
+      position:sticky;top:10px;backdrop-filter: blur(10px); z-index:10;
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .logo{
+      width:38px;height:38px;border-radius:12px;border:1px solid var(--bd);
+      background:linear-gradient(135deg, rgba(57,217,138,.25), rgba(255,214,107,.18));
+      display:grid;place-items:center;font-weight:900;
+    }
+    .brand .t{min-width:0}
+    .brand .t b{display:block;line-height:1.05}
+    .brand .t span{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .pill{
+      padding:8px 10px;border-radius:999px;border:1px solid var(--bd);
+      background:rgba(255,255,255,.05);text-decoration:none;font-size:13px;
+    }
+    .pill:hover{background:rgba(255,255,255,.09)}
+
+    .hero{
+      margin-top:14px;border-radius:var(--r);overflow:hidden;border:1px solid var(--bd);
+      background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.60)), url('assets/hero.jpg') center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+    .hero-inner{padding:28px}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 12px;border-radius:999px;background:rgba(57,217,138,.15);
+      border:1px solid rgba(57,217,138,.25); color:#d7ffea; font-weight:700;
+    }
+    h1{margin:14px 0 10px;font-size:34px;line-height:1.1}
+    .sub{margin:0 0 14px;color:#e5f0e6;max-width:760px;line-height:1.6}
+    .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;border:1px solid var(--bd);
+      background:rgba(255,255,255,.08);text-decoration:none;font-weight:800;
+    }
+    .btn.primary{background:var(--accent);color:#052012;border:none}
+    .btn.secondary{background:rgba(255,214,107,.14);border:1px solid rgba(255,214,107,.22)}
+    .meta{
+      margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:14px
+    }
+    .meta span{padding:8px 10px;border:1px dashed rgba(255,255,255,.18);border-radius:12px;background:rgba(0,0,0,.25)}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
+    .card{
+      grid-column:span 12;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);
+      padding:16px;box-shadow:0 10px 40px rgba(0,0,0,.18)
+    }
+    .card h2{margin:0 0 10px;font-size:18px}
+    .muted{color:var(--muted);line-height:1.6;margin:0}
+    ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.6}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin-top:10px}
+    .ph{
+      grid-column:span 12;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.2)
+    }
+    .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    @media(min-width:820px){
+      .card.half{grid-column:span 6}
+      .card.third{grid-column:span 4}
+      .ph.a{grid-column:span 7}
+      .ph.b{grid-column:span 5}
+      .ph.c,.ph.d,.ph.e,.ph.f{grid-column:span 3}
+      h1{font-size:40px}
+    }
+
+    .floating{
+      position:fixed;right:14px;bottom:14px;display:flex;flex-direction:column;gap:10px;z-index:20
+    }
+    .fab{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;
+      background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14);backdrop-filter: blur(10px);
+      text-decoration:none;font-weight:900
+    }
+    .fab strong{display:none}
+    @media(min-width:520px){ .fab strong{display:inline} }
+
+    .footer{margin:18px 0 8px;color:var(--muted);font-size:13px;text-align:center}
+    .note{color:#d7f7e6}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">EV</div>
+        <div class="t">
+          <b>EV686</b>
+          <span>Trạm Sạc • Rửa Xe • Coffee — Rạch Giá</span>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="pill" href="#dichvu">Dịch vụ</a>
+        <a class="pill" href="#hinhanh">Hình ảnh</a>
+        <a class="pill" href="#lienhe">Liên hệ</a>
+      </div>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="badge">💚 EV686 — ghé 1 lần là nhớ</div>
+        <h1>Trạm Sạc • Rửa Xe • Coffee EV686</h1>
+        <p class="sub">
+          Không chỉ “đi sạc” — mà là <b>nghỉ chân đúng nghĩa</b>: mái che rộng, chỗ ngồi thoải mái,
+          có <b>khu võng</b> + <b>coffee phòng lạnh</b>. Xe sạc xong, ghé rửa nhẹ, uống ly nước rồi đi tiếp cho đã!
+        </p>
+
+        <div class="ctas">
+          <a class="btn primary" href="tel:0888757686">📞 0888 757 686</a>
+          <a class="btn primary" href="tel:0355146868">📞 0355 146 868</a>
+          <a class="btn secondary" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/X75g6pLdbDQFkZju7?g_st=ic">📍 Chỉ đường</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://zalo.me/g/pwzguu313">💬 Vào nhóm Zalo</a>
+        </div>
+
+        <div class="meta">
+          <span>🕒 Mở cửa: <b>06:00 – 23:00</b></span>
+          <span>📍 Mở Maps để tới đúng trạm</span>
+          <span>⚡ Sạc xe • 💦 Rửa xe • ☕ Coffee</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid" id="dichvu">
+      <div class="card third">
+        <h2>⚡ Trạm sạc ô tô điện</h2>
+        <p class="muted">Khu sạc rộng, dễ đậu, có mái che. Chờ sạc có chỗ ngồi + coffee luôn.</p>
+        <ul>
+          <li>Mái che mát, không nắng gắt</li>
+          <li>Khu ngồi chờ tiện nghi</li>
+        </ul>
+      </div>
+
+      <div class="card third">
+        <h2>💦 Rửa xe & chăm sóc</h2>
+        <p class="muted">Rửa sạch kỹ. Tiện “1 điểm dừng” — sạc xong rửa luôn.</p>
+        <ul>
+          <li>Rửa trong/ngoài + hút bụi</li>
+          <li>Có khu tự rửa (vòi áp lực + máy hơi)</li>
+        </ul>
+      </div>
+
+      <div class="card third">
+        <h2>☕ Coffee phòng lạnh & khu võng</h2>
+        <p class="muted">Muốn mát vô phòng lạnh, muốn chill ghé khu võng nghỉ xíu cho tỉnh.</p>
+        <ul>
+          <li>Phòng lạnh sạch, sáng</li>
+          <li>Khu võng rộng rãi</li>
+        </ul>
+      </div>
+
+      <div class="card half">
+        <h2>🔥 Điểm cộng (từ hình ảnh thực tế)</h2>
+        <ul>
+          <li>Không gian rộng, xe ra vô thoải mái</li>
+          <li>Nhiều chỗ ngồi chờ, ngồi uống nước tiện</li>
+          <li>Có khu võng riêng (nghỉ chân cực đã)</li>
+          <li>Ban đêm bảng hiệu sáng, dễ tìm</li>
+        </ul>
+      </div>
+
+      <div class="card half">
+        <h2>✅ Nhắn vào nhóm Zalo để được hỗ trợ nhanh</h2>
+        <p class="muted">Cần hỏi đường, hỏi dịch vụ, hỏi giờ vắng/đông… vào nhóm là có người hỗ trợ liền.</p>
+        <div class="ctas" style="margin-top:10px">
+          <a class="btn" target="_blank" rel="noopener" href="https://zalo.me/g/pwzguu313">💬 Vào nhóm Zalo EV686</a>
+        </div>
+      </div>
+
+      <div class="card" id="hinhanh">
+        <h2>🖼️ Hình ảnh EV686</h2>
+        <p class="muted">Album chọn từ ảnh Nhung gửi (mặt tiền, khu sạc, không gian, khu võng, coffee, ban đêm).</p>
+
+        <div class="gallery">
+          <div class="ph a"><img src="assets/space.jpg" alt="Không gian trạm EV686"></div>
+          <div class="ph b"><img src="assets/charging.jpg" alt="Khu sạc EV686"></div>
+
+          <div class="ph c"><img src="assets/hammock.jpg" alt="Khu võng EV686"></div>
+          <div class="ph d"><img src="assets/coffee.jpg" alt="Coffee 686"></div>
+          <div class="ph e"><img src="assets/night.jpg" alt="Mặt tiền EV686 ban đêm"></div>
+          <div class="ph f"><img src="assets/hero.jpg" alt="Mặt tiền EV686 ban ngày"></div>
+        </div>
+      </div>
+
+      <div class="card" id="lienhe">
+        <h2>📍 Liên hệ & chỉ đường</h2>
+        <p class="muted">
+          Bấm gọi trực tiếp hoặc mở Google Maps để đi tới trạm.
+        </p>
+        <div class="ctas" style="margin-top:10px">
+          <a class="btn primary" href="tel:0888757686">📞 0888 757 686</a>
+          <a class="btn primary" href="tel:0355146868">📞 0355 146 868</a>
+          <a class="btn secondary" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/X75g6pLdbDQFkZju7?g_st=ic">📍 Mở Google Maps</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://zalo.me/g/pwzguu313">💬 Nhóm Zalo</a>
+        </div>
+        <p class="note" style="margin-top:12px">Giờ mở cửa: <b>06:00 – 23:00</b></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      © EV686 — Trạm Sạc • Rửa Xe • Coffee • Mở cửa 06:00–23:00
+    </div>
+  </div>
+
+  <div class="floating">
+    <a class="fab" href="tel:0888757686">📞 <strong>0888 757 686</strong></a>
+    <a class="fab" href="tel:0355146868">📞 <strong>0355 146 868</strong></a>
+    <a class="fab" target="_blank" rel="noopener" href="https://maps.app.goo.gl/X75g6pLdbDQFkZju7?g_st=ic">📍 <strong>Chỉ đường</strong></a>
+    <a class="fab" target="_blank" rel="noopener" href="https://zalo.me/g/pwzguu313">💬 <strong>Nhóm Zalo</strong></a>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
